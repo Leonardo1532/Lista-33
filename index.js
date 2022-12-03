@@ -10,8 +10,8 @@
 function ContarVogal(frase) {
     var numeroVogal = 0;
     var vogais = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-    for (var index = 0; index < frase.length; index++) {
-        if (vogais.indexOf(frase[index]) != -1) {
+    for (var index_1 = 0; index_1 < frase.length; index_1++) {
+        if (vogais.indexOf(frase[index_1]) != -1) {
             numeroVogal++;
         }
     }
@@ -23,16 +23,18 @@ function ContarVogal(frase) {
 // Ex.:
 // Entrada: “código” Saída:“di” 
 //Entrada: “jogando” Saída:“a”
+var index;
 function RetornarCaractere(palavra) {
     var caractere = palavra.split("");
     console.log(caractere);
     var metade = (palavra.length / 2);
-    console.log(metade);
-    var index = (metade + 0.5);
     if (palavra.length % 2 != 0) {
+        index = (metade - 0.5);
         console.log(palavra[index]);
     }
     else if (palavra.length % 2 == 0) {
+        index = (metade);
+        console.log(palavra[index - 1] + palavra[index]);
     }
 }
 // 3. Faça uma função que receba um número qualquer inteiro e positivo como
@@ -42,7 +44,14 @@ function RetornarCaractere(palavra) {
 // Entrada: 42145 Saída: 54421
 // Entrada: 145263 Saída: 654321
 function OrganizarNumero(numeros) {
-    if (numeros === void 0) { numeros = []; }
-    numeros.sort();
-    console.log(numeros.reverse());
+    var numerosString = String(numeros);
+    var numerosSeprados = numerosString.split("");
+    numerosSeprados.sort();
+    numerosSeprados.reverse();
+    var concatenar = ("");
+    for (var index_2 = 0; index_2 < numerosSeprados.length; index_2++) {
+        concatenar = concatenar + numerosSeprados[index_2];
+    }
+    var numerosNumber = parseInt(concatenar);
+    console.log(numerosNumber);
 }

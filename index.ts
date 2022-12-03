@@ -29,19 +29,19 @@ function ContarVogal(frase: string): number {
 // Entrada: “código” Saída:“di” 
 //Entrada: “jogando” Saída:“a”
 
-
+let index: number
 function RetornarCaractere(palavra: string) {
     let caractere = palavra.split("")
     console.log(caractere)
-
     let metade: number = (palavra.length / 2)
-    console.log(metade)
-    let index = (metade + 0.5)
+    
     if (palavra.length % 2 != 0) {
+        index = (metade - 0.5)
         console.log(palavra[index])
 
     } else if (palavra.length % 2 == 0) {
-
+        index = (metade)
+        console.log(palavra[index -1]+palavra[index])
     }
 }
 
@@ -54,7 +54,19 @@ function RetornarCaractere(palavra: string) {
 // Entrada: 145263 Saída: 654321
 
 
-function OrganizarNumero(numeros: number[] = []) {
-    numeros.sort()
-    console.log(numeros.reverse())
+function OrganizarNumero(numeros: number) {
+    let numerosString = String(numeros)
+    let numerosSeprados = numerosString.split("")
+
+    numerosSeprados.sort()
+    numerosSeprados.reverse()
+
+    let concatenar: string = ("")
+    for (let index = 0; index < numerosSeprados.length; index++) {
+        concatenar = concatenar + numerosSeprados[index]
+
+    }
+
+    let numerosNumber = parseInt(concatenar)
+    console.log(numerosNumber)
 }
