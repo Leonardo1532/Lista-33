@@ -32,16 +32,16 @@ function ContarVogal(frase: string): number {
 let index: number
 function RetornarCaractere(palavra: string) {
     let caractere = palavra.split("")
-    console.log(caractere)
     let metade: number = (palavra.length / 2)
     
     if (palavra.length % 2 != 0) {
         index = (metade - 0.5)
-        console.log(palavra[index])
+        return palavra[index]
 
     } else if (palavra.length % 2 == 0) {
         index = (metade)
-        console.log(palavra[index -1]+palavra[index])
+        let concatenar = palavra[index -1]+palavra[index]
+        return concatenar
     }
 }
 
@@ -68,5 +68,5 @@ function OrganizarNumero(numeros: number) {
     }
 
     let numerosNumber = parseInt(concatenar)
-    console.log(numerosNumber)
+    return numerosNumber
 }

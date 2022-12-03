@@ -26,15 +26,15 @@ function ContarVogal(frase) {
 var index;
 function RetornarCaractere(palavra) {
     var caractere = palavra.split("");
-    console.log(caractere);
     var metade = (palavra.length / 2);
     if (palavra.length % 2 != 0) {
         index = (metade - 0.5);
-        console.log(palavra[index]);
+        return palavra[index];
     }
     else if (palavra.length % 2 == 0) {
         index = (metade);
-        console.log(palavra[index - 1] + palavra[index]);
+        var concatenar = palavra[index - 1] + palavra[index];
+        return concatenar;
     }
 }
 // 3. Faça uma função que receba um número qualquer inteiro e positivo como
@@ -53,5 +53,5 @@ function OrganizarNumero(numeros) {
         concatenar = concatenar + numerosSeprados[index_2];
     }
     var numerosNumber = parseInt(concatenar);
-    console.log(numerosNumber);
+    return numerosNumber;
 }
